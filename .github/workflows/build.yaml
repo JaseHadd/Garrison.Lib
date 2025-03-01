@@ -25,4 +25,4 @@ jobs:
         dotnet nuget push
         bin/Release/Garrison.Lib.*.nupkg
         --source github
-        --api-key ${{ github.token }}
+        --api-key ${{ secrets.NUGET_KEY }}
