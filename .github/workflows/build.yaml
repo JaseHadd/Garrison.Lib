@@ -12,16 +12,16 @@ jobs:
       with:
         dotnet-version: 9.0
     - run: >-
-        dotnet pack Garrison.Lib.csproj \
-          --configuration Release
+        dotnet pack Garrison.Lib.csproj
+        --configuration Release
     - run: >-
-        dotnet nuget add source \
-          --username ${{ github.repository_owner }} \
-          --password ${{ github.token }} \
-          --store-password-in-cleartext \
-          --name github \
-          "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+        dotnet nuget add source
+        --username ${{ github.repository_owner }}
+        --password ${{ github.token }}
+        --store-password-in-cleartext
+        --name github
+        "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
     - run: >-
-        dotnet nuget push \
-          bin/Release/Garrison.Lib.*.nupkg \
-          --source github
+        dotnet nuget push
+        bin/Release/Garrison.Lib.*.nupkg
+        --source github
