@@ -22,4 +22,16 @@
     <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0" />
   </ItemGroup>
 
+  <!-- NuGet properties -->
+  <PropertyGroup>
+    <PackageId>Garrison.Lib</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Jase Haddleton</Authors>
+    <RepositoryURL>https://github.com/JaseHadd/Garrison.Lib</RepositoryURL>
+    <PackageDescription>
+      The library package for the Garrison suite of tools. Includes the data layer, with the
+      EF Core migrations.
+    </PackageDescription>
+  </PropertyGroup>
+
 </Project>

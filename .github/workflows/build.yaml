@@ -1,0 +1,27 @@
+name: Build NuGet Package
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0
+    - run: >
+        dotnet pack Garrison.Lib.csproj
+          --configuration Release
+    - run: >
+        dotnet nuget add source
+          --username ${{ github.repository_owner }}
+          --password ${{ github.token }}
+          --store-password-in-cleartext
+          --name github
+          "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+    - run: >
+        dotnet nuget push
+          bin/Release/Garrison.Lib.*.nupkg
+          --source github
