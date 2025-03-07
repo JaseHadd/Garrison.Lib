@@ -26,7 +26,7 @@
   <!-- NuGet properties -->
   <PropertyGroup>
     <PackageId>Garrison.Lib</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>Jase Haddleton</Authors>
     <RepositoryURL>https://github.com/JaseHadd/Garrison.Lib</RepositoryURL>
     <PackageDescription>
