@@ -1,6 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 using Garrison.Lib.DataAnnotations;
 
 namespace Garrison.Lib.Models;
@@ -18,9 +16,4 @@ public class Character
 
     [Required]
     public required User    Owner       { get; set; }
-
-    [JsonIgnore]
-    [MaxLength(1024*1024)]
-    [Column(TypeName = "json")]
-    public          string? Data        { get; set; }
 }

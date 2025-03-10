@@ -3,6 +3,7 @@ using System;
 using Garrison.Lib;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Garrison.Lib.Migrations
 {
     [DbContext(typeof(GarrisonContext))]
-    partial class GarrisonContextModelSnapshot : ModelSnapshot
+    [Migration("20250310111913_RemoveJsonFromDatabase")]
+    partial class RemoveJsonFromDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
